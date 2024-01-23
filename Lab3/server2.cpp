@@ -40,6 +40,7 @@ const char* getResponse(const char* message)
     //Errors
     return "I'm sorry, I didn't understand. Could you please provide more details or ask a specific question?";
 }
+
 void error(string msg)
 {
     cerr<<"[-]"<<msg<<endl;
