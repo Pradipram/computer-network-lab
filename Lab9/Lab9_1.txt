@@ -1,0 +1,17 @@
+Part 1 : capture
+
+1.a  	sudo tcpdump --list-interfaces
+1.b	sudo tcpdump -i any -n 'ip'
+1.c	sudo tcpdump -i enp0s3 -c 1000 -W 1 -G 60 (to find primary network interfaces run "ifconfig -a")
+1.d	sudo tcpdump -i enp0s3 -c 50 -v
+1.e	sudo tcpdump -c 30 -v -i any
+1.f 	first terminal: "sudo tcpdump -i enp0s3 icmp"
+	second terminal: "ping -c 100 www.google.com"
+1.g	sudo tcpdump -i any -n 'tcp port 80 or tcp port 8080'
+1.h	sudo tcpdump -i any -n -X 'port 5000'
+1.i	sudo tcpdump -i enp0s3 -c 30 -n host 10.0.2.15 -w output.txt  [10.0.2.15 is the ip address of host this can be found by running 'ifconfig']\
+1.j 	sudo tcpdump -i any -c 100 -n 'src net 192.168.1.0/24 and tcp[tcpflags] & tcp-syn != 0' -w capture.pcap
+
+Part2 : Protocol Analysis
+1.a 	sudo tcpdump -i enp0s3 -c 1 -X 'tcp'
+
